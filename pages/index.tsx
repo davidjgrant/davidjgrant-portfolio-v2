@@ -12,7 +12,7 @@ const Home: NextPage<Props> = ({ projects }) => {
   return (
     <Layout>
       <main>
-        <h1>
+        <h1 className='text-3xl'>
           Project
         </h1>
         <ul>

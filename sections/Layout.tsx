@@ -1,5 +1,6 @@
 import Header from "./Header";
 import Head from "next/head";
+import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
@@ -10,11 +11,12 @@ const Layout = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="min-h-screen mx-auto max-w-2xl flex flex-col">
+      <div className="min-h-screen flex flex-col">
         <Header />
-        <main className="flex-grow container mx-auto px-4 sm:px-6">
+        <main>
           {children}
         </main>
+        <Footer />
       </div>
     </>
   );

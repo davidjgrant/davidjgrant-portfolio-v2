@@ -1,5 +1,5 @@
 import { GetStaticProps, GetStaticPaths, NextPage } from "next"
-import { getAllProjectsWithSlug, getProjectAndMore } from "../../lib/api"
+import { getAllProjectsWithSlug, getProjectAndMore } from "../api"
 import { IProjectFields } from "../../types";
 
 interface Props {

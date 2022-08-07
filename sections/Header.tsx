@@ -1,36 +1,17 @@
-import { useTheme } from 'next-themes'
-import { useState, useEffect } from "react";
+import Logo from '../components/logo';
+import DarkModeBtn from '../components/darkModeBtn';
+import Nav from '../components/nav';
 
-const Header = () => {
-
-  const {systemTheme , theme, setTheme} = useTheme();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() =>{
-    setMounted(true);
-  },[])
-
-  const renderThemeChanger = () => {
-    if(!mounted) return null;
-    
-    const currentTheme = theme === "system" ? systemTheme : theme ;
-
-    if(currentTheme ==="dark"){
-      return (
-        <button className="w-10 h-10 text-yellow-500 " role="button" onClick={() => setTheme('light')} >Light</button>
-      )
-    }
-
-    else {
-      return (
-        <button className="w-10 h-10 text-gray-900 " role="button" onClick={() => setTheme('dark')} >Dark</button>
-      )
-    }
-  };
+const Header = () => { 
 
   return (
-    <header className="h-15 shadow-sm dark:border-gray-700 mb-5">
-      <div className="container px-4 sm:px-6 py-4 flex justify-between items-center">
-        {renderThemeChanger()}
+    <header className="h-15 z-10 fixed w-screen mb-5">
+      <div className="container mx-auto px-4 sm:px-0 py-4 flex justify-between items-center">
+        <Logo />
+        <div className="nav-wrapper flex justify-between items-center gap-6">
+          <Nav />
+          <DarkModeBtn />
+        </div>
       </div>
     </header>
   );

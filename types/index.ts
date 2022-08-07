@@ -1,5 +1,15 @@
-import { Asset, Entry } from "contentful";
+import { Asset, Entry, RichTextData } from "contentful";
 import { Document } from "@contentful/rich-text-types";
+
+export interface IHomepageFields {
+  jobTitles: [];
+  introPost: RichTextData;
+  introFuture: RichTextData;
+  portfolioTitle: string;
+  blogTitle: string;
+  profilePic: Asset;
+  location: object;
+}
 
 export interface IProjectFields {
   /** Title */

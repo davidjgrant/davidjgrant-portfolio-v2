@@ -1,6 +1,22 @@
+const  HOMEPAGE_GRAHQL_FIELDS = `
+  jobTitles
+  introPast {
+    json
+  }
+  introFuture {
+    json
+  }
+  portfolioTitle
+  blogTitle
+  profilePic {
+    url
+  }
+  location
+`
+
 const PROJECT_GRAPHQL_FIELDS = `
-slug
-title
+  slug
+  title
 `
 
 async function fetchGraphQL(query) {
@@ -15,6 +31,10 @@ async function fetchGraphQL(query) {
       body: JSON.stringify({ query })
     }
   ).then((response) => response.json()))
+}
+
+function extractHome(fetchResponse) {
+  return fetchResponse?.data?.homepageCollection?.items
 }
 
 function extractProject(fetchResponse) {
@@ -75,4 +95,17 @@ export async function getProjectAndMore(slug) {
     project: extractProject(project),
     moreProjects: extractProjects(projects)
   }
+}
+
+export async function getHomepage() {
+  const home = await fetchGraphQL(
+    `query {
+      homepageCollection {
+        items {
+          ${HOMEPAGE_GRAHQL_FIELDS}
+        }
+      }
+    }`
+  );
+  return extractHome(home)
 }

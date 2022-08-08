@@ -9,7 +9,7 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-0 py-4 flex justify-between items-center">
         <Logo />
         <div className="nav-wrapper flex justify-between items-center gap-6">
-          <Nav />
+          <Nav isFooter={false} />
           <DarkModeBtn />
         </div>
       </div>

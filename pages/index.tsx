@@ -1,5 +1,3 @@
-import { MARKS } from '@contentful/rich-text-types';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Link from 'next/link'
 import Image from 'next/image';
 import { getAllProjectsForHome, getHomepage } from './api'
@@ -12,22 +10,14 @@ import GradientBanner from '../sections/GradientBanner';
 // Types
 import type { GetStaticProps, NextPage } from 'next'
 import type { IProjectFields } from '../types'
+import IntroSplit from '../sections/IntroSplit';
 
 interface Props {
   projects: IProjectFields[];
   home;
 }
 
-const Bold = ({ children }) => <span className="font-bold text-orange-500">{ children }</span>;
-
-const options = {
-  renderMark: {
-    [MARKS.BOLD]: text => <Bold>{ text }</Bold>,
-  },
-  renderText: text => text.replace('!', '?')
-};
-
-const Home: NextPage<Props> = ({ projects, home: { jobTitles, profilePic, introPast, introFuture, portfolioTitle, blogTitle, location } }) => {
+const Home: NextPage<Props> = ({ projects, home: { jobTitles, profilePic, introPast, introFuture, portfolioTitle, blogTitle } }) => {
   return (
     <Layout>
       <>
@@ -46,10 +36,7 @@ const Home: NextPage<Props> = ({ projects, home: { jobTitles, profilePic, introP
           </div>
         </GradientBanner>
         <article className='container mx-auto mb-16'>
-          <div>
-            <div>{documentToReactComponents(introPast.json, options)}</div>
-            <div>{documentToReactComponents(introFuture.json)}</div>
-          </div>
+          <IntroSplit text={{ introPast, introFuture }} />
 
           <div>{portfolioTitle}</div>
           <ul>

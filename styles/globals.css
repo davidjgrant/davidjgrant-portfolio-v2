@@ -9,8 +9,18 @@
   }
   
   .btn {
-    @apply inline-block px-5 py-3 rounded-lg hover:bg-indigo-600 transition duration-300 shadow-lg bg-indigo-500 text-white capitalize tracking-wider font-semibold text-sm sm:text-xl focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50 whitespace-nowrap
+    @apply inline-block px-5 py-3 rounded-full transition duration-300 capitalize tracking-wide font-semibold focus:outline-none focus:ring-4 focus:ring-opacity-50 whitespace-nowrap
   }
+
+  .btn-primary {
+    @apply hover:bg-amber-400 bg-gradient-to-r from-amber-500 to-pink-600 text-white focus:ring-amber-400
+  }
+
+  .btn-secondary {
+    @apply hover:bg-gradient-to-r from-amber-500 to-pink-600 hover:border-2 hover:text-white dark:hover:text-black border-amber-400 border-2 text-amber-400 focus:ring-amber-400
+  }
+
+
 }
 
 #clock {

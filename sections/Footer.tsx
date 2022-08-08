@@ -1,26 +1,28 @@
+import Link from 'next/link'
 import React from 'react'
+import Clock from '../components/clock'
 import Nav from '../components/nav'
 
 const Footer = () => {
   return (
     <>
       <div className='bg-gradient-to-r from-amber-500 to-pink-600 h-4'></div>
-      <footer className='bg-gray-200 text-gray-900 dark:bg-zinc-900 dark:text-gray-100'>
-        <div className="container flex flex-col h-64 items-center mx-auto relative overflow-hidden">
-          <div className='flex justify-between items-center mb-10'>
-            <Nav />
+      <footer className='bg-gray-200 text-zinc-900 dark:bg-black dark:text-gray-100'>
+        <div className="container flex flex-col h-64 justify-center items-center mx-auto relative overflow-hidden">
+          <div className='flex justify-around w-full items-center mb-10 font-medium'>
+            <Nav isFooter={true} />
             <div className='flex flex-col justify-center items-center'>
-              <div className=""></div>
+              <Clock />
               <p>Bristol, UK</p>
             </div>
-            <div className="flex flex-col justify-center items-center">
-              <h5>Follow me on social media</h5>
+            <div className="flex flex-col justify-center items-start">
+              <h5 className='mb-4'>Follow me on social media</h5>
               <ul className='flex gap-4'>
-                <li>LinkedIn</li>
-                <li>Github</li>
-                <li>Spotify</li>
-                <li>Dribble</li>
-                <li>Medium</li>
+                <li><Link href="https://www.linkedin.com/in/davidjohngrant/">LinkedIn</Link></li>
+                <li><Link href="https://github.com/davidjohngrant/">Github</Link></li>
+                <li><Link href="https://open.spotify.com/user/djgrant_/">Spotify</Link></li>
+                <li><Link href="https://dribbble.com/davidjohngrant/">Dribble</Link></li>
+                <li><Link href="https://medium.com/@DavidJohnGrant">Medium</Link></li>
               </ul>
             </div>
           </div>

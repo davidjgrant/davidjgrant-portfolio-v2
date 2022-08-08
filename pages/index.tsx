@@ -1,7 +1,11 @@
 import { MARKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Link from 'next/link'
+import Image from 'next/image';
 import { getAllProjectsForHome, getHomepage } from './api'
+//Components
+import JobTitles from '../components/jobTitles';
+import imageLoader from '../utils/imageHandler';
 // Sections
 import Layout from '../sections/Layout'
 import GradientBanner from '../sections/GradientBanner';
@@ -27,7 +31,20 @@ const Home: NextPage<Props> = ({ projects, home: { jobTitles, profilePic, introP
   return (
     <Layout>
       <>
-        <GradientBanner info={{jobTitles, profilePic}} />
+        <GradientBanner>
+          <h1 className='text-3xl font-semibold p-3 text-white'>DavidJGrant Portfolio</h1>
+          <JobTitles jobTitles={jobTitles} />
+          <div className="dark:bg-black bg-gray-50 p-4 rounded-full absolute -bottom-20 left-1/2 transform -translate-x-1/2">
+            <Image
+              className='rounded-full'
+              loader={imageLoader}
+              src={profilePic.url}
+              alt="Profile Pic"
+              width={248}
+              height={248}
+            />
+          </div>
+        </GradientBanner>
         <article className='container mx-auto mb-16'>
           <div>
             <div>{documentToReactComponents(introPast.json, options)}</div>

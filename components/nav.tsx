@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link';
 
-const Nav = () => {
+const Nav = ({isFooter}) => {
   return (
     <ul className="nav-links gap-8 hidden sm:flex">
       <li className="link">
@@ -14,6 +14,13 @@ const Nav = () => {
           <a>Contact</a>
         </Link>
       </li>
+      {isFooter && 
+        <li className="link">
+        <Link href="/portfolio">
+          <a>Portfolio</a>
+        </Link>
+      </li>
+      }
     </ul>
   )
 }

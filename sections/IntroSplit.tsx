@@ -16,7 +16,7 @@ const options = {
 const IntroSplit = ({ text: { introPast, introFuture } }) => {
   return (
     <div className='relative h-[360px] flex justify-center items-center'>
-      <div className='flex flex-col sm:flex-row px-6 sm:px-16 sm:justify-between gap-8 sm:gap-32 absolute z-10'>
+      <div className='flex flex-col sm:flex-row px-4 sm:px-16 sm:justify-between gap-8 sm:gap-32 absolute z-10'>
         <div>
           <h4 className='font-bold text-lg mb-4'>How I got here</h4>
           {documentToReactComponents(introPast.json, options)}

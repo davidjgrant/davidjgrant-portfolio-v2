@@ -19,13 +19,10 @@ export interface IProjectFields {
   slug: string;
 
   /** Description */
-  description: string;
+  shortDescription: string;
 
   /** Publish date */
-  publishDate: string;
-
-  /** Content */
-  content: Document;
+  image;
 }
 
 export interface IProject extends Entry<IProjectFields> {

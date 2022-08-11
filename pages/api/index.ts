@@ -17,6 +17,10 @@ const  HOMEPAGE_GRAHQL_FIELDS = `
 const PROJECT_GRAPHQL_FIELDS = `
   slug
   title
+  shortDescription
+  image {
+    url
+  }
 `
 
 async function fetchGraphQL(query) {

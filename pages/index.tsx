@@ -1,17 +1,18 @@
-import Link from 'next/link'
 import Image from 'next/image';
 import { getAllProjectsForHome, getHomepage } from './api'
 //Components
 import JobTitles from '../components/jobTitles';
 import imageLoader from '../utils/imageHandler';
+import SectionTitle from '../components/sectionTitle';
 // Sections
 import Layout from '../sections/Layout'
 import GradientBanner from '../sections/GradientBanner';
+import IntroSplit from '../sections/IntroSplit';
+import PortfolioGrid from '../sections/PortfolioGrid';
 // Types
 import type { GetStaticProps, NextPage } from 'next'
 import type { IProjectFields } from '../types'
-import IntroSplit from '../sections/IntroSplit';
-import SectionTitle from '../components/sectionTitle';
+
 
 interface Props {
   projects: IProjectFields[];
@@ -36,24 +37,19 @@ const Home: NextPage<Props> = ({ projects, home: { jobTitles, profilePic, introP
             />
           </div>
         </GradientBanner>
-        <article className='container mx-auto mb-16'>
+        <article className='container mx-auto'>
           <IntroSplit text={{ introPast, introFuture }} />
-          <SectionTitle title={'View Portfolio'} arrow={true} color={'amber-gradient'}>
+          <SectionTitle title={'View Portfolio'} arrow={true} color={'amber-pink-gradient'}>
             { portfolioTitle }
           </SectionTitle>
-          <ul>
-            {projects.map((project) => (
-              <li key={project.slug}>
-                <Link href={`/portfolio/${project.slug}`}>
-                  <a>{project.title}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
+        </article>
+        <PortfolioGrid projects={projects} />
+        <article className='container mx-auto mb-16'>
           <SectionTitle title={'Recent Insights'} arrow={false} color={'green-blue-gradient'}>
             { blogTitle }
           </SectionTitle>
         </article>
+        
       </>
     </Layout>
   )

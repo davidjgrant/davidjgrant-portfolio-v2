@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Nav = ({isFooter}) => {
   return (
-    <ul className="nav-links gap-8 hidden sm:flex">
+    <ul className={`nav-links gap-8 ${ !isFooter ? 'hidden' : 'flex gap-4  order-3'} sm:flex`}>
       <li className="link">
         <Link href="/about">
           <a>About</a>

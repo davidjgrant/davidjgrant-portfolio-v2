@@ -30,7 +30,7 @@ const Clock = () => {
   }, [])
   
   return (
-    <div id="my-clock" className='w-[80px] h-[80px] mb-4'></div>
+    <div id="my-clock" className='w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] mb-4'></div>
   )
 }
 

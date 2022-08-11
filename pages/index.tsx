@@ -11,6 +11,7 @@ import GradientBanner from '../sections/GradientBanner';
 import type { GetStaticProps, NextPage } from 'next'
 import type { IProjectFields } from '../types'
 import IntroSplit from '../sections/IntroSplit';
+import SectionTitle from '../components/sectionTitle';
 
 interface Props {
   projects: IProjectFields[];
@@ -37,8 +38,9 @@ const Home: NextPage<Props> = ({ projects, home: { jobTitles, profilePic, introP
         </GradientBanner>
         <article className='container mx-auto mb-16'>
           <IntroSplit text={{ introPast, introFuture }} />
-
-          <div>{portfolioTitle}</div>
+          <SectionTitle title={'View Portfolio'} arrow={true} color={'amber-gradient'}>
+            { portfolioTitle }
+          </SectionTitle>
           <ul>
             {projects.map((project) => (
               <li key={project.slug}>
@@ -48,8 +50,9 @@ const Home: NextPage<Props> = ({ projects, home: { jobTitles, profilePic, introP
               </li>
             ))}
           </ul>
-
-          <h3>{ blogTitle }</h3>
+          <SectionTitle title={'Recent Insights'} arrow={false} color={'green-blue-gradient'}>
+            { blogTitle }
+          </SectionTitle>
         </article>
       </>
     </Layout>

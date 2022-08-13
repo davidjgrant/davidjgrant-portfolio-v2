@@ -43,3 +43,7 @@
 #clock .clock-hour {
   @apply !w-[3px] dark:!bg-gray-50 !bg-gray-900
 }
+
+.perspective-card {
+  perspective: 800px;
+}

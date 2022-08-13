@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import { getAllProjectsForHome, getHomepage } from './api'
+import { motion } from 'framer-motion'
+import { fade, titleAnimation } from '../styles/Animation'
 //Components
 import JobTitles from '../components/jobTitles';
 import imageLoader from '../utils/imageHandler';
@@ -22,11 +24,11 @@ interface Props {
 const Home: NextPage<Props> = ({ projects, home: { jobTitles, profilePic, introPast, introFuture, portfolioTitle, blogTitle } }) => {
   return (
     <Layout>
-      <>
         <GradientBanner>
-          <h1 className='text-3xl font-semibold p-3 text-white'>DavidJGrant Portfolio</h1>
+          <motion.h1 variants={titleAnimation} initial='hidden' whileInView='show' viewport={{ once: true, amount: 0.8 }} className='text-3xl font-semibold p-3 text-white'>DavidJGrant Portfolio</motion.h1>
           <JobTitles jobTitles={jobTitles} />
-          <div className="dark:bg-black bg-gray-50 p-4 rounded-full absolute -bottom-20 left-1/2 transform -translate-x-1/2">
+          <motion.div variants={fade}
+            className="dark:bg-black bg-gray-50 p-4 rounded-full absolute -bottom-20 left-1/2 transform -translate-x-1/2">
             <Image
               className='rounded-full'
               loader={imageLoader}
@@ -35,7 +37,7 @@ const Home: NextPage<Props> = ({ projects, home: { jobTitles, profilePic, introP
               width={248}
               height={248}
             />
-          </div>
+          </motion.div>
         </GradientBanner>
         <article className='container mx-auto'>
           <IntroSplit text={{ introPast, introFuture }} />
@@ -49,8 +51,6 @@ const Home: NextPage<Props> = ({ projects, home: { jobTitles, profilePic, introP
             { blogTitle }
           </SectionTitle>
         </article>
-        
-      </>
     </Layout>
   )
 }

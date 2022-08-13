@@ -1,17 +1,20 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+import { fade, titleAnimation } from '../styles/Animation'
 
 const JobTitles = ({jobTitles}) => {
   return (
-    <ul>
+    <motion.ul variants={titleAnimation}>
       { jobTitles && jobTitles.map((title) => {
         return (
-          <li
+          <motion.li
+          variants={fade}
             className='text-white'
             key={title}
-          >{title}</li>
+          >{title}</motion.li>
         )
       })}
-    </ul>
+    </motion.ul>
   )
 }
 

@@ -15,7 +15,7 @@ const Footer = () => {
               <Clock />
               <p>Bristol, UK</p>
             </div>
-            <div className="flex flex-col justify-center items-start order-1">
+            <div className="flex flex-col justify-center items-start order-1 sm:order-3">
               <h5 className='mb-4 hidden sm:block'>Follow me on social media</h5>
               <ul className='flex gap-4'>
                 <li><Link href="https://www.linkedin.com/in/davidjohngrant/">LinkedIn</Link></li>

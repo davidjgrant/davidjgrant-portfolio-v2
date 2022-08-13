@@ -3,6 +3,8 @@ import { MARKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Link from 'next/link';
 import Button from '../components/button';
+import { motion } from 'framer-motion';
+import { fade } from '../styles/Animation';
 
 const Bold = ({ children }) => <span className="font-bold text-orange-500">{ children }</span>;
 
@@ -15,7 +17,8 @@ const options = {
 
 const IntroSplit = ({ text: { introPast, introFuture } }) => {
   return (
-    <div className='relative h-[360px] flex justify-center items-center'>
+    <motion.div variants={fade} initial='hidden' whileInView='show' viewport={{ once: true, amount: 0.5 }}
+      className='relative h-[360px] flex justify-center items-center'>
       <div className='flex flex-col sm:flex-row px-4 sm:px-16 sm:justify-between gap-8 sm:gap-32 absolute z-10'>
         <div>
           <h4 className='font-bold text-lg mb-4'>How I got here</h4>
@@ -39,7 +42,7 @@ const IntroSplit = ({ text: { introPast, introFuture } }) => {
         </div>
       </div>
       <div className='absolute select-none z-0 flex text-center justify-center items-center w-full blur-sm opacity-25 font-bold text-gray-300 dark:text-neutral-900 text-9xl mb-32 sm:text-[18rem]'>3+ years</div>
-    </div>
+    </motion.div>
   )
 }
 

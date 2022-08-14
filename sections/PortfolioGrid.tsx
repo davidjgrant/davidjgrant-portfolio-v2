@@ -13,8 +13,8 @@ const PortfolioGrid = ({projects}) => {
 
   return (
     <motion.div variants={fade} initial='hidden' whileInView='show' viewport={{ once: true, amount: 0.6 }}
-      className='relative flex justify-center items-end h-[58rem] sm:h-[42rem] mb-48'>
-      <motion.ul variants={picAnimation} className='absolute grid grid-cols-1 sm:grid-cols-2 gap-8 mx-4 sm:mx-auto z-10 perspective-card'>
+      className='relative flex justify-center items-end h-[58rem] sm:h-[40rem] mb-48'>
+      <motion.ul variants={picAnimation} className='absolute sm:container sm:max-w-[1280px] grid grid-cols-1 sm:grid-cols-2 gap-8 mx-4 content-center sm:mx-auto z-10 perspective-card'>
         {projects.map(({ slug, title, shortDescription, image }) => (
           <ProjectCard key={slug} title={title} description={shortDescription} image={image.url} slug={slug} />
         ))}

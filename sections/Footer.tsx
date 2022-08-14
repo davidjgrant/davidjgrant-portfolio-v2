@@ -4,6 +4,9 @@ import Clock from '../components/clock'
 import Nav from '../components/nav'
 
 const Footer = () => {
+
+  const currentYear = new Date().getFullYear()
+
   return (
     <>
       <div className='bg-gradient-to-r from-amber-500 to-pink-600 h-4'></div>
@@ -26,7 +29,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <span className='absolute select-none -bottom-1 sm:-bottom-2 font-bold text-gray-400 dark:text-neutral-900 opacity-10 whitespace-nowrap text-4xl sm:text-6xl md:text-8xl tracking-wider'>©2022 DAVIDJGRANT</span>
+          <span className='absolute select-none -bottom-1 sm:-bottom-2 font-bold text-gray-400 dark:text-neutral-900 opacity-10 whitespace-nowrap text-4xl sm:text-6xl md:text-8xl tracking-wider'>©{currentYear} DAVIDJGRANT</span>
         </div>
       </footer>
     </>

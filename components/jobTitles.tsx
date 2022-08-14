@@ -8,7 +8,7 @@ const JobTitles = ({jobTitles}) => {
       { jobTitles && jobTitles.map((title) => {
         return (
           <motion.li
-          variants={fade}
+            variants={fade}
             className='text-white'
             key={title}
           >{title}</motion.li>

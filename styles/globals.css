@@ -36,6 +36,14 @@
     @apply text-transparent bg-clip-text bg-gradient-to-tl from-amber-500 to-pink-600
   }
 
+  .form-field {
+    @apply bg-gray-100 dark:bg-zinc-900 dark:placeholder:text-zinc-800 placeholder:text-gray-300 rounded-full h-12 px-6 mb-4 dark:border-zinc-800 border-gray-200 border-2
+  }
+
+  .form-field.long {
+    @apply h-32 rounded-3xl pt-2
+  }
+
 }
 
 #clock {

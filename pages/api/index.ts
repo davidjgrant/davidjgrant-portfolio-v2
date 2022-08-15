@@ -1,4 +1,4 @@
-const  HOMEPAGE_GRAHQL_FIELDS = `
+const HOMEPAGE_GRAHQL_FIELDS = `
   jobTitles
   introPast {
     json
@@ -12,6 +12,18 @@ const  HOMEPAGE_GRAHQL_FIELDS = `
     url
   }
   location
+`
+
+const ABOUTPAGE_GRAPHQL_FIELDS = `
+  title
+  headerDescription
+  headerPicture {
+    url
+  }
+  skillsList
+  aboutSection {
+    json
+  }
 `
 
 const PROJECT_GRAPHQL_FIELDS = `
@@ -39,6 +51,10 @@ async function fetchGraphQL(query) {
 
 function extractHome(fetchResponse) {
   return fetchResponse?.data?.homepageCollection?.items
+}
+
+function extractAbout(fetchResponse) {
+  return fetchResponse?.data?.aboutPageCollection?.items
 }
 
 function extractProject(fetchResponse) {
@@ -112,4 +128,17 @@ export async function getHomepage() {
     }`
   );
   return extractHome(home)
+}
+
+export async function getAboutPage() {
+  const aboutPage = await fetchGraphQL(
+    `query {
+      aboutPageCollection {
+        items {
+          ${ABOUTPAGE_GRAPHQL_FIELDS}
+        }
+      }
+    }`
+  );
+  return extractAbout(aboutPage)
 }

@@ -5,7 +5,7 @@ import { fade, titleAnimation } from '../styles/Animation'
 const JobTitles = ({jobTitles}) => {
   return (
     <motion.ul variants={titleAnimation}>
-      { jobTitles && jobTitles.map((title) => {
+      { jobTitles?.map((title) => {
         return (
           <motion.li
             variants={fade}

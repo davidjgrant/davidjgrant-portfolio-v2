@@ -32,6 +32,9 @@
     @apply bg-gradient-to-tr from-purple-500 to-purple-900
   }
 
+  .quote {
+    @apply text-transparent bg-clip-text bg-gradient-to-tl from-amber-500 to-pink-600
+  }
 
 }
 
@@ -46,4 +49,41 @@
 
 .perspective-card {
   perspective: 800px;
+}
+
+.infinite-scroll {
+  width: 4000px;
+  animation: slide 30s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1692px, 0, 0);
+  }
+}
+
+.quotes:before,
+.quotes:after {
+  content: '\0022';
+  top: -25px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  color: transparent;
+  background-image: linear-gradient(to top left, #f59e0b, #db2777 );
+  background-clip: text;
+}
+
+.quotes:before {
+  left: -25px;
+  transform: rotate(-45deg);
+}
+
+.quotes:after {
+  right: -25px;
+  transform: rotate(45deg);
 }

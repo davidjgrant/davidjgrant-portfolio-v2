@@ -24,7 +24,7 @@ interface Props {
 const Home: NextPage<Props> = ({ projects, home: { jobTitles, profilePic, introPast, introFuture, portfolioTitle, blogTitle } }) => {
   return (
     <Layout>
-        <GradientBanner>
+        <GradientBanner gradient={'amber-pink-gradient'}>
           <motion.h1 variants={titleAnimation} initial='hidden' whileInView='show' viewport={{ once: true, amount: 0.8 }} className='text-3xl font-semibold p-3 text-white'>DavidJGrant Portfolio</motion.h1>
           <JobTitles jobTitles={jobTitles} />
           <motion.div variants={fade}
@@ -58,7 +58,6 @@ const Home: NextPage<Props> = ({ projects, home: { jobTitles, profilePic, introP
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const [ home ] = await getHomepage() ?? []
   const projects = await getAllProjectsForHome() ?? []
-  console.log('home', home );
   
   return {
     props: { projects, home }

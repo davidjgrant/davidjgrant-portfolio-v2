@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import Clock from '../components/clock'
 import Nav from '../components/nav'
+import Socials from '../components/socials'
 
 const Footer = () => {
 
@@ -20,13 +21,7 @@ const Footer = () => {
             </div>
             <div className="flex flex-col justify-center items-start order-1 sm:order-3">
               <h5 className='mb-4 hidden sm:block'>Follow me on social media</h5>
-              <ul className='flex gap-4'>
-                <li><Link href="https://www.linkedin.com/in/davidjohngrant/">LinkedIn</Link></li>
-                <li><Link href="https://github.com/davidjohngrant/">Github</Link></li>
-                <li><Link href="https://open.spotify.com/user/djgrant_/">Spotify</Link></li>
-                <li><Link href="https://dribbble.com/davidjohngrant/">Dribble</Link></li>
-                <li><Link href="https://medium.com/@DavidJohnGrant">Medium</Link></li>
-              </ul>
+              <Socials />
             </div>
           </div>
           <span className='absolute select-none -bottom-1 sm:-bottom-2 font-bold text-gray-400 dark:text-neutral-900 opacity-10 whitespace-nowrap text-4xl sm:text-6xl md:text-8xl tracking-wider'>©{currentYear} DAVIDJGRANT</span>

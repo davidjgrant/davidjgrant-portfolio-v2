@@ -29,7 +29,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={formSubmit} className='flex flex-col w-[450px]'>
+    <form onSubmit={formSubmit} className='flex flex-col w-full sm:w-[450px] mx-auto lg:mx-0'>
       <input
         className="form-field"
         typeof="text"

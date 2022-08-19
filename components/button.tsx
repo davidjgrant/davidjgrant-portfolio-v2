@@ -1,10 +1,12 @@
 import React from 'react'
 
-const Button = ({style, children}) => {
-  if (style === 'primary') {
-    return (<div className='btn btn-primary'>{children}</div>)
-  } else if (style === 'secondary') {
-    return (<div className='btn btn-secondary'>{children}</div>)
+const Button = ({type, children}) => {
+  if (type === 'primary') {
+    return (<button className='btn btn-primary'>{children}</button>)
+  } else if (type === 'secondary') {
+    return (<button className='btn btn-secondary'>{children}</button>)
+  } else if (type === 'tertiary') {
+    return (<button className='btn btn-tertiary'>{children}</button>)
   }
 }
 

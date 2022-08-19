@@ -34,12 +34,12 @@ const IntroSplit = ({ text: { introPast, introFuture } }) => {
           <h4 className='font-bold text-lg mb-4'>Where i'm going next</h4>
           {documentToReactComponents(introFuture.json)}
           <div className='flex gap-4 my-6'>
-            <Button style={'secondary'} >
+            <Button type={'secondary'} >
               <Link href={'mailto:hello@davidjgrant.com'}>
                 <a className='px-8 py-3'>Email</a>
               </Link>
             </Button>
-            <Button style={'primary'}>
+            <Button type={'primary'}>
               <Link href={''}>
                 <a className='px-8 py-3'>CV</a>
               </Link>

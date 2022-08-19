@@ -26,6 +26,12 @@ const ABOUTPAGE_GRAPHQL_FIELDS = `
   }
 `
 
+const CONTACTPAGE_GRAPHQL_FIELDS = `
+  title
+  shortDescription
+
+`
+
 const PROJECT_GRAPHQL_FIELDS = `
   slug
   title
@@ -55,6 +61,10 @@ function extractHome(fetchResponse) {
 
 function extractAbout(fetchResponse) {
   return fetchResponse?.data?.aboutPageCollection?.items
+}
+
+function extractContact(fetchResponse) {
+  return fetchResponse?.data?.contactPageCollection?.items
 }
 
 function extractProject(fetchResponse) {
@@ -141,4 +151,17 @@ export async function getAboutPage() {
     }`
   );
   return extractAbout(aboutPage)
+}
+
+export async function getContactPage() {
+  const contactPage = await fetchGraphQL(
+    `query {
+      contactPageCollection {
+        items {
+          ${CONTACTPAGE_GRAPHQL_FIELDS}
+        }
+      }
+    }`
+  );
+  return extractContact(contactPage)
 }

@@ -9,15 +9,19 @@
   }
   
   .btn {
-    @apply inline-block py-2 rounded-full transition-colors ease-in-out duration-300 capitalize tracking-wide font-semibold focus:outline-none focus:ring-4 focus:ring-opacity-50 whitespace-nowrap focus:ring-amber-400
+    @apply inline-block w-fit h-12 py-2 rounded-full transition-opacity ease-in-out duration-300 capitalize tracking-wider whitespace-nowrap font-semibold hover:opacity-80 focus:outline-none focus:ring-4 focus:ring-opacity-50 focus:ring-amber-400
   }
 
   .btn-primary {
-    @apply bg-gradient-to-r from-amber-500 to-pink-600 hover:bg-gradient-to-r hover:from-amber-600 hover:to-pink-700 text-white
+    @apply bg-gradient-to-r from-amber-500 to-pink-600 text-white
   }
 
   .btn-secondary {
-    @apply text-transparent bg-clip-text bg-gradient-to-r hover:bg-gradient-to-r dark:hover:text-transparent dark:hover:bg-clip-text dark:hover:bg-gradient-to-r from-amber-500 to-pink-600 dark:text-white border-2
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-pink-600 border-[2.5px] dark:border-white border-zinc-200
+  }
+
+  .btn-tertiary {
+    @apply bg-white text-zinc-800
   }
 
   .amber-pink-gradient {

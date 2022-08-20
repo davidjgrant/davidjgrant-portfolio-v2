@@ -14,19 +14,19 @@ interface Props {
   contactPage;
 }
 
-const contact: NextPage<Props> = ({ contactPage: { title, shortDescription }}) => {
+const contact: NextPage<Props> = ({ contactPage: { title, shortDescription, featuredBannerTitle, featuredBannerText }}) => {
   
   return (
       <Layout>
         <div className="h-36"></div>
         <div className="container mx-auto flex flex-col lg:flex-row justify-between px-6 xl:px-0">
-          <div className="flex flex-col w-full sm:w-[42rem] mx-auto text-center lg:text-left px-2">
+          <div className="flex flex-col w-full sm:w-[42rem] mx-auto text-center lg:text-left">
             <h1 className="mb-4 font-bold text-2xl">{title}</h1>
             <p className="mb-6">{shortDescription}</p>
             <ContactForm />
           </div>
-          <div className="flex flex-col w-full sm:w-[42rem] mx-auto text-center px-2">
-            <FeaturedTextBanner />
+          <div className="flex flex-col w-full sm:w-[42rem] mx-auto text-center">
+            <FeaturedTextBanner title={featuredBannerTitle} text={featuredBannerText} />
             <div className="flex flex-col md:grid lg:block grid-rows-2 grid-flow-col gap-6 md:gap-4 my-8 md:my-12 lg:my-0">
               <div className="flex flex-col justify-center items-center order-2 md:order-1 px-4 sm:px-0 lg:my-16">
                 <h3 className={`font-bold text-lg capitalise text-transparent bg-clip-text green-blue-gradient`}>Email</h3>

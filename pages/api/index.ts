@@ -29,7 +29,8 @@ const ABOUTPAGE_GRAPHQL_FIELDS = `
 const CONTACTPAGE_GRAPHQL_FIELDS = `
   title
   shortDescription
-
+  featuredBannerTitle
+  featuredBannerText
 `
 
 const PROJECT_GRAPHQL_FIELDS = `

@@ -25,7 +25,7 @@
   }
 
   .amber-pink-gradient {
-    @apply bg-gradient-to-r from-amber-500 to-pink-600
+    @apply bg-gradient-to-r from-yellow-500 to-pink-600
   }
 
   .green-blue-gradient {
@@ -34,6 +34,10 @@
 
   .purple-purple-gradient {
     @apply bg-gradient-to-tr from-purple-500 to-purple-900
+  }
+
+  .blue-blue-gradient {
+    @apply bg-gradient-to-tr from-blue-500 to-blue-900
   }
 
   .quote {

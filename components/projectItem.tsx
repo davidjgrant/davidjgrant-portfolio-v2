@@ -14,7 +14,7 @@ export const ProjectItem = ({ link, children }) => {
       whileTap={{ scale: 0.95 }}
     >
       <h3 className={`text-lg text-zinc-900 dark:text-gray-100`}>
-        <Link href={`/portfolio/${link}`}>
+        <Link href={`/portfolio${link}`}>
           <a>{children}</a>
         </Link>
       </h3>

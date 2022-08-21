@@ -33,13 +33,43 @@ const CONTACTPAGE_GRAPHQL_FIELDS = `
   featuredBannerText
 `
 
-const PROJECT_GRAPHQL_FIELDS = `
+const HOME_PROJECTS_GRAPHQL_FIELDS = `
   slug
   title
+  color
   shortDescription
   image {
     url
   }
+`
+
+const PROJECT_GRAPHQL_FIELDS = `
+  slug
+  title
+  author {
+    name
+    profile {
+      url
+    }
+  }
+  bodyRichText {
+    json
+    links {
+      assets {
+        block {
+          sys {
+            id
+          }
+          url
+        }
+      }
+    }
+  }
+  featureImage {
+    url
+  }
+  tags
+  published
 `
 
 async function fetchGraphQL(query) {
@@ -81,7 +111,7 @@ export async function getAllProjectsForHome() {
     ` query {
         portfolioCollection {
           items {
-            ${PROJECT_GRAPHQL_FIELDS}
+            ${HOME_PROJECTS_GRAPHQL_FIELDS}
           }
         }
       }
@@ -93,7 +123,7 @@ export async function getAllProjectsForHome() {
 export async function getAllProjectsWithSlug() {
   const projects = await fetchGraphQL(
     `query {
-      portfolioCollection(where: { slug_exists: true }) {
+      portfolioCollection(limit: 4, where: { slug_exists: true }) {
         items {
           ${PROJECT_GRAPHQL_FIELDS}
         }

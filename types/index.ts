@@ -21,8 +21,23 @@ export interface IProjectFields {
   /** Description */
   shortDescription: string;
 
+  /** Featured Image */
+  image: Object
+
+  /** Author */
+  author: Object
+
   /** Publish date */
-  image;
+  published: string
+
+  /** Tags list */
+  tags: string[]
+
+  /** Feature Image */
+  featureImage: Object
+
+  /** Feature Image */
+  bodyRichText: IProject
 }
 
 export interface IProject extends Entry<IProjectFields> {

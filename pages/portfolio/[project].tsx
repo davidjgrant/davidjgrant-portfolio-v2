@@ -1,16 +1,31 @@
 import { GetStaticProps, GetStaticPaths, NextPage } from "next"
 import { getAllProjectsWithSlug, getProjectAndMore } from "../api"
 import { IProjectFields } from "../../types";
+import Layout from "../../sections/Layout";
+import ProjectHead from "../../sections/ProjectHead";
+import Author from "../../components/author";
+import Roles from "../../components/roles";
+import ProjectBody from "../../sections/ProjectBody";
+import HeroBanner from "../../components/heroBanner";
 
 interface Props {
   project: IProjectFields;
   moreProjects: IProjectFields;
 }
 
-export const ProjectPage: NextPage<Props> = ({ project, moreProjects }) => {
+export const ProjectPage: NextPage<Props> = ({ project: {title, author, published, tags, featureImage, bodyRichText}, moreProjects }) => {
   return (
-    <pre>{JSON.stringify(project, null, 2)}
-    {JSON.stringify(moreProjects, null, 2)}</pre>
+    <Layout>
+      <ProjectHead>
+        <h1 className="text-3xl font-bold">{title}</h1>
+        <Author author={author} published={published} />
+        <Roles roles={tags} />
+      </ProjectHead>
+      <ProjectBody bodyRichText={bodyRichText}>
+        <HeroBanner image={featureImage} />
+
+      </ProjectBody>
+    </Layout>
   )
 }
 
@@ -27,12 +42,6 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data = await getAllProjectsWithSlug()
-  // const paths = data.map(({slug}) => {
-  //   return {
-  //     params: { project: slug }
-  //   }
-  // })
-
   return {
     paths: data?.map(({slug}) => ({params: { project: slug }})),
     fallback: false,

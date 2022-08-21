@@ -15,7 +15,7 @@ const AboutContent = ({content}) => {
 
 
   return (
-    <article className='my-32 container max-w-4xl mx-auto text-center about-content'>
+    <article className='my-24 md:my-32 container max-w-4xl mx-auto text-center about-content'>
       {documentToReactComponents(content.json, options)}
     </article>
   )

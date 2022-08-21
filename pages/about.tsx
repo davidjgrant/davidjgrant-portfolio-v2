@@ -21,13 +21,13 @@ const about: NextPage<Props> = ({ aboutPage: { title, headerDescription, headerP
   return (
     <Layout>
       <GradientBanner gradient={'green-blue-gradient'}>
-        <div className='h-full flex flex-col sm:flex-row sm:items-center sm:justify-around mx-auto container text-white'>
-          <div className='text-left container max-w-3xl my-16'>
+        <div className='flex flex-col md:flex-row md:items-center md:justify-around mx-auto container text-white px-6'>
+          <div className='text-left container max-w-3xl my-16 md:my-0'>
             <h1 className='mb-4 font-bold text-lg'>About Me</h1>
             <h2 className='mb-14 text-2xl'>{ title }</h2>
             <p className='mb-6'>{ headerDescription }</p>
           </div>
-          <div className='dark:bg-black bg-gray-50 p-4 h-fit sm:mt-[30vh] relative'>
+          <div className='dark:bg-black bg-gray-50 p-4 h-fit relative'>
             <Image
               className='absolute right-0'
               loader={imageLoader}

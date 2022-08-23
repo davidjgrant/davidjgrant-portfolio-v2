@@ -60,11 +60,11 @@
     @apply !shadow-none !border-[2px] dark:!border-gray-50 !border-gray-900
   }
 
-  #clock .clock-minute,
-  #clock .clock-hour {
-    @apply !w-[3px] dark:!bg-gray-50 !bg-gray-900
-  }
+}
 
+#clock .clock-minute,
+#clock .clock-hour {
+  @apply !w-[3px] dark:!bg-gray-50 !bg-gray-900
 }
 
 .perspective-card {

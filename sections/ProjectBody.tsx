@@ -41,7 +41,7 @@ const ProjectBody = ({children, bodyRichText}) => {
     <motion.section
       className='project mx-auto container mt-16 sm:mt-24 mb-16'>
       {children}
-      <article className='project mx-auto container bg-gray-100 dark:bg-zinc-900'>
+      <article className='project -mt-2 mx-auto container bg-gray-100 dark:bg-zinc-900'>
         <motion.div
           className='mx-auto max-w-4xl py-16 px-6 lg:px-0'>
           {documentToReactComponents(bodyRichText.json, renderOptions(bodyRichText.links))}

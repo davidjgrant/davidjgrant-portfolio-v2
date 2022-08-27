@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { useTheme } from 'next-themes'
+import { CgSun } from 'react-icons/cg'
+import { FaMoon } from 'react-icons/fa'
+
 
 export const DarkModeBtn = () => {
 
@@ -15,13 +18,17 @@ export const DarkModeBtn = () => {
 
   if(currentTheme ==="dark"){
     return (
-      <button className="w-10 h-10 text-yellow-500 " role="button" onClick={() => setTheme('light')} >Light</button>
+      <button className="text-yellow-500 " role="button" onClick={() => setTheme('light')} >
+        <CgSun size='1.4rem' />
+      </button>
     )
   }
 
   else {
     return (
-      <button className="w-10 h-10 text-gray-900 " role="button" onClick={() => setTheme('dark')} >Dark</button>
+      <button className="text-gray-900 " role="button" onClick={() => setTheme('dark')} >
+        <FaMoon size='1.4rem' />
+      </button>
     )
   }
 };

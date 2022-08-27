@@ -4,7 +4,7 @@ import Button from '../components/button';
 
 const FeaturedTextBanner = ({title, text}) => {
   return (
-    <div className='p-5 bg-gray-200 dark:bg-zinc-900 text-white mx-auto max-w-md'>
+    <section className='p-5 bg-gray-200 dark:bg-zinc-900 text-white mx-auto max-w-md'>
       <div className='mx-auto p-6 green-blue-gradient'>
         <h5 className='mb-4 font-bold text-xl'>{title}</h5>
         <p className='mb-6 text-center'>{text}</p>
@@ -14,7 +14,7 @@ const FeaturedTextBanner = ({title, text}) => {
           </Link>
         </Button>
       </div>
-    </div>
+    </section>
   )
 }
 

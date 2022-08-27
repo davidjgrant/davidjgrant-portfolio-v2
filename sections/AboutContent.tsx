@@ -4,16 +4,15 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 // Sections
 import ImageWithText from './ImageWithText'
 import { motion } from 'framer-motion';
-import { fade, titleAnimation } from '../styles/Animation';
+import { titleAnimation } from '../styles/Animation';
 
+const AboutContent = ({ content, featuredBanner }) => {
 
-const options = {
-  renderMark: {
-    [MARKS.CODE]: () => <ImageWithText />,
-  }
-};
-
-const AboutContent = ({content}) => {
+  const options = {
+    renderMark: {
+      [MARKS.CODE]: () => <ImageWithText featuredBanner={ featuredBanner } />,
+    }
+  };
 
 
   return (

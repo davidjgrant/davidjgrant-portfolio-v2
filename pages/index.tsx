@@ -47,11 +47,13 @@ const Home: NextPage<Props> = ({ projects, home: { jobTitles, profilePic, introP
           </SectionTitle>
         </article>
         <PortfolioGrid projects={projects} />
-        <article className='container mx-auto mb-16'>
-          <SectionTitle title={'Recent Insights'} arrow={false} color={'green-blue-gradient'}>
-            { blogTitle }
-          </SectionTitle>
-        </article>
+        { blogTitle ?
+          <article className='container mx-auto mb-16'>
+            <SectionTitle title={'Recent Insights'} arrow={false} color={'green-blue-gradient'}>
+              { blogTitle }
+            </SectionTitle>
+          </article>
+        : ''}
     </Layout>
   )
 }

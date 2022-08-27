@@ -24,6 +24,8 @@ const ABOUTPAGE_GRAPHQL_FIELDS = `
   aboutSection {
     json
   }
+  featuredTitle
+  featuredDescription
 `
 
 const CONTACTPAGE_GRAPHQL_FIELDS = `

@@ -21,7 +21,7 @@ interface Props {
   aboutPage;
 }
 
-const about: NextPage<Props> = ({ aboutPage: { title, headerDescription, headerPicture, skillsList, aboutSection }}) => {
+const about: NextPage<Props> = ({ aboutPage: { title, headerDescription, headerPicture, skillsList, aboutSection, featuredTitle, featuredDescription }}) => {
   return (
     <Layout>
       <GradientBanner gradient={'green-blue-gradient'}>
@@ -44,7 +44,7 @@ const about: NextPage<Props> = ({ aboutPage: { title, headerDescription, headerP
         </div>
       </GradientBanner>
       <SkillsList skillsList={skillsList} />
-      <AboutContent content={aboutSection} />
+      <AboutContent content={aboutSection} featuredBanner={{ featuredTitle, featuredDescription }} />
       <HireMe jobHunting={true} />
     </Layout>
   )

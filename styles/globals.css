@@ -60,6 +60,10 @@
     @apply !shadow-none !border-[2px] dark:!border-gray-50 !border-gray-900
   }
 
+  .city path {
+    @apply fill-zinc-900 dark:fill-gray-100
+  }
+
 }
 
 main section {

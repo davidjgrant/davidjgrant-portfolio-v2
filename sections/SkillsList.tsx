@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+import { fade } from '../styles/Animation'
 
 const SkillsList = ({skillsList}) => {
 
@@ -16,7 +18,8 @@ const SkillsList = ({skillsList}) => {
   }
 
   return (
-    <div className='w-[96vw] mx-auto my-24 md:mt-64 md:mb-32 flex flex-col items-start text-4xl md:text-6xl font-bold text-gray-200 dark:text-zinc-900 opacity-15 select-none overflow-hidden'>
+    <motion.section variants={fade}
+      className='w-[96vw] mx-auto my-24 md:mt-64 md:mb-32 flex flex-col items-start text-4xl md:text-6xl font-bold text-gray-200 dark:text-zinc-900 opacity-15 select-none overflow-hidden'>
       {result.map(list => {
         return (
           <ul className='flex justify-between gap-x-16 infinite-scroll mb-16'
@@ -27,7 +30,7 @@ const SkillsList = ({skillsList}) => {
           })}</ul>
         )
       })}
-    </div>
+    </motion.section>
 
   )
 }

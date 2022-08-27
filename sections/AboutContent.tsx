@@ -3,6 +3,8 @@ import { MARKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 // Sections
 import ImageWithText from './ImageWithText'
+import { motion } from 'framer-motion';
+import { fade, titleAnimation } from '../styles/Animation';
 
 
 const options = {
@@ -15,9 +17,10 @@ const AboutContent = ({content}) => {
 
 
   return (
-    <article className='my-24 md:my-32 container max-w-4xl mx-auto text-center about-content'>
+    <motion.article variants={titleAnimation} initial='hidden' whileInView='show' viewport={{ once: true, amount: 0.7 }}
+      className='my-16 md:my-32 px-6 md:px-0 container max-w-4xl mx-auto text-center about-content'>
       {documentToReactComponents(content.json, options)}
-    </article>
+    </motion.article>
   )
 }
 

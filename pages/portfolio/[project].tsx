@@ -7,6 +7,8 @@ import Author from "../../components/author";
 import Roles from "../../components/roles";
 import ProjectBody from "../../sections/ProjectBody";
 import HeroBanner from "../../components/heroBanner";
+import { motion } from "framer-motion";
+import { fade } from "../../styles/Animation";
 
 interface Props {
   project: IProjectFields;
@@ -17,7 +19,7 @@ export const ProjectPage: NextPage<Props> = ({ project: {title, author, publishe
   return (
     <Layout>
       <ProjectHead>
-        <h1 className="text-3xl font-bold">{title}</h1>
+        <motion.h1 variants={fade} className="text-3xl font-bold">{title}</motion.h1>
         <Author author={author} published={published} />
         <Roles roles={tags} />
       </ProjectHead>

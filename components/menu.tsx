@@ -5,7 +5,7 @@ import { stagger } from '../styles/Animation'
 import { ProjectItem } from "./projectItem";
 
 
-export const Menu = () => {
+export const Menu = ({toggle}) => {
   const itemIds = [0, 1, 2, 3];
   return (
     <div className="row-span-2">
@@ -18,10 +18,10 @@ export const Menu = () => {
       </motion.ul>
       <motion.ul className="pt-2"
         variants={stagger}>
-        <ProjectItem link={'/focus-os'}>Focus OS</ProjectItem>
-        <ProjectItem link={'/rankr'}>Rankr</ProjectItem>
-        <ProjectItem link={'/notedrop'}>NoteDrop</ProjectItem>
-        <ProjectItem link={'/hot-pot'}>HotPot</ProjectItem>
+        <ProjectItem toggle={toggle} link={'/focus-os'}>Focus OS</ProjectItem>
+        <ProjectItem toggle={toggle} link={'/rankr'}>Rankr</ProjectItem>
+        <ProjectItem toggle={toggle} link={'/notedrop'}>NoteDrop</ProjectItem>
+        <ProjectItem toggle={toggle} link={'/hot-pot'}>HotPot</ProjectItem>
       </motion.ul>
     </div>
   )

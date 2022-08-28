@@ -23,7 +23,7 @@ export const MobileNav = () => {
             <Logo />
           </div>
           <div className="grid grid-rows-3 h-[90vh]">
-            <Menu />
+            <Menu toggle={() => toggleOpen()} />
             <MobNavFooter />
           </div>
         </div>

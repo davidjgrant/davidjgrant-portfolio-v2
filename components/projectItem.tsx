@@ -5,9 +5,11 @@ import Link from "next/link";
 
 // const colors = ["amber-pink", "green-blue", "purple-purple", "amber-pink", "green-blue"];
 
-export const ProjectItem = ({ link, children }) => {
+
+export const ProjectItem:React.ElementType = ({ link, children, toggle }) => {
   return (
     <motion.li
+      onClick={toggle}
       className="mb-2"
       variants={stagger}
       whileHover={{ scale: 1.1 }}

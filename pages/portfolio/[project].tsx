@@ -9,6 +9,7 @@ import ProjectBody from "../../sections/ProjectBody";
 import HeroBanner from "../../components/heroBanner";
 import { motion } from "framer-motion";
 import { fade } from "../../styles/Animation";
+import ProjectFooter from "../../sections/ProjectFooter";
 
 interface Props {
   project: IProjectFields;
@@ -16,6 +17,8 @@ interface Props {
 }
 
 export const ProjectPage: NextPage<Props> = ({ project: {title, author, published, tags, featureImage, bodyRichText}, moreProjects }) => {
+  console.log(moreProjects[0]);
+  
   return (
     <Layout>
       <ProjectHead>
@@ -25,15 +28,14 @@ export const ProjectPage: NextPage<Props> = ({ project: {title, author, publishe
       </ProjectHead>
       <ProjectBody bodyRichText={bodyRichText}>
         <HeroBanner image={featureImage} />
-
       </ProjectBody>
+      <ProjectFooter moreProjects={moreProjects} />
     </Layout>
   )
 }
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const data = await getProjectAndMore(params.project)
-  console.log('projectData', { data });
   return {
     props: {
       project: data.project,

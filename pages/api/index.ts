@@ -72,6 +72,7 @@ const PROJECT_GRAPHQL_FIELDS = `
   }
   tags
   published
+  shortDescription
 `
 
 async function fetchGraphQL(query) {

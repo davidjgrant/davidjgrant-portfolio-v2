@@ -17,7 +17,7 @@ const Nav = ({isFooter}) => {
         </li>
         {isFooter && 
           <li className="link">
-          <Link href="/portfolio">
+          <Link href="/portfolio/focus-os">
             <a>Portfolio</a>
           </Link>
         </li>

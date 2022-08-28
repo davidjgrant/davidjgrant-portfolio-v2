@@ -39,7 +39,7 @@ const ProjectBody = ({children, bodyRichText}) => {
 
   return (
     <motion.section
-      className='project mx-auto container mt-16 sm:mt-24 mb-16'>
+      className='project mx-auto container mt-16 sm:mt-24 mb-1'>
       {children}
       <article className='project -mt-2 mx-auto container bg-gray-100 dark:bg-zinc-900'>
         <motion.div

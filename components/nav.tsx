@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Nav = ({isFooter}) => {
   return (
     <nav>
-      <ul className={`nav-links gap-8 font-semibold ${ !isFooter ? 'hidden' : 'flex gap-4  order-3 sm:order-1'} sm:flex`}>
+      <ul className={`nav-links gap-8 font-semibold ${ !isFooter ? 'hidden' : 'flex gap-4  order-3 sm:order-1 mb-6'} sm:flex`}>
         <li className="link">
           <Link href="/about">
             <a>About</a>

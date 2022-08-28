@@ -13,15 +13,15 @@ export const Menu = () => {
         variants={stagger}>
         <MenuItem i={itemIds[0]} link={'/about'}>About</MenuItem>
         <MenuItem i={itemIds[1]} link={'/contact'}>Contact</MenuItem>
-        <MenuItem i={itemIds[2]} link={'/blog'}>Blog</MenuItem>
-        <MenuItem i={itemIds[3]} link={'/portfolio'}>Portfolio</MenuItem>
+        {/* <MenuItem i={itemIds[2]} link={'/blog'}>Blog</MenuItem> */}
+        <MenuItem i={itemIds[3]} link={'/portfolio/focus-os'}>Portfolio</MenuItem>
       </motion.ul>
       <motion.ul className="pt-2"
         variants={stagger}>
         <ProjectItem link={'/focus-os'}>Focus OS</ProjectItem>
         <ProjectItem link={'/rankr'}>Rankr</ProjectItem>
         <ProjectItem link={'/notedrop'}>NoteDrop</ProjectItem>
-        <ProjectItem link={'/hotpot'}>HotPot</ProjectItem>
+        <ProjectItem link={'/hot-pot'}>HotPot</ProjectItem>
       </motion.ul>
     </div>
   )

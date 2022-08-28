@@ -12,6 +12,9 @@ const HOMEPAGE_GRAHQL_FIELDS = `
     url
   }
   location
+  cv {
+    url
+  }
 `
 
 const ABOUTPAGE_GRAPHQL_FIELDS = `

@@ -21,7 +21,7 @@ const options = {
   renderText: text => text.replace('3', yearsWorks)
 };
 
-const IntroSplit = ({ text: { introPast, introFuture } }) => {
+const IntroSplit = ({ text: { introPast, introFuture, cv } }) => {
   return (
     <motion.div variants={fade} initial='hidden' whileInView='show' viewport={{ once: true, amount: 0.5 }}
       className='relative h-[300px] flex justify-center items-center'>
@@ -40,14 +40,14 @@ const IntroSplit = ({ text: { introPast, introFuture } }) => {
               </Link>
             </Button>
             <Button type={'primary'}>
-              <Link href={''}>
-                <a className='px-8 py-3'>CV</a>
+              <Link href={cv.url}>
+                <a target="_blank" className='px-8 py-3'>CV</a>
               </Link>
             </Button>
           </div>
         </div>
       </div>
-      <div className='absolute select-none z-0 flex text-center justify-center items-center w-full blur-sm opacity-25 font-bold text-gray-300 dark:text-neutral-900 text-9xl mb-32 sm:text-[18rem]'>{yearsWorks}+ years</div>
+      <div className='absolute select-none z-0 flex text-center justify-center items-center w-full blur-sm opacity-25 font-bold text-gray-300 dark:text-neutral-900 text-9xl mb-32 md:text-[12rem] xl:text-[18rem]'>{yearsWorks}+ years</div>
     </motion.div>
   )
 }

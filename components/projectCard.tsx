@@ -22,25 +22,21 @@ const ProjectCard = ({ title, description, image, slug }) => {
   const rotateX = useTransform(y, [0, 1], [-8, 8])
 
   const onMove = e => {
-    // get position information for the card
-    const bounds = e.currentTarget.getBoundingClientRect()
-    
-    // set x,y local coordinates
-    const xValue = (e.clientX - bounds.x) / e.currentTarget.clientWidth
-    const yValue = (e.clientY - bounds.y) / e.currentTarget.clientHeight
-    
-    // update MotionValues
-    x.set(xValue, true)
-    y.set(yValue, true)
+    if (window.innerWidth > 1024) {
+      // get position information for the card
+      const bounds = e.currentTarget.getBoundingClientRect()
+      
+      // set x,y local coordinates
+      const xValue = (e.clientX - bounds.x) / e.currentTarget.clientWidth
+      const yValue = (e.clientY - bounds.y) / e.currentTarget.clientHeight
+      
+      // update MotionValues
+      x.set(xValue, true)
+      y.set(yValue, true)
+    }
   }
 
-  const onLeave = e => {
-    const bounds = e.currentTarget.getBoundingClientRect()
-
-    // set x,y local coordinates
-    const xValue = (e.clientX - bounds.x) / e.currentTarget.clientWidth
-    const yValue = (e.clientY - bounds.y) / e.currentTarget.clientHeight
-
+  const onLeave = () => {
     x.set(0.5)
     y.set(0.5)
   }
@@ -53,7 +49,7 @@ const ProjectCard = ({ title, description, image, slug }) => {
         rotateY,
         rotateX,
       }}
-      className='max-w-[640px]'>
+      className='max-w-[640px] !hover:rotate-0'>
         <Link href={`/portfolio/${slug}`}>
           <a className='flex shadow-md shadow-zinc-900'>
             <Image

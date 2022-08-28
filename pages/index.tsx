@@ -21,7 +21,7 @@ interface Props {
   home;
 }
 
-const Home: NextPage<Props> = ({ projects, home: { jobTitles, profilePic, introPast, introFuture, portfolioTitle, blogTitle } }) => {
+const Home: NextPage<Props> = ({ projects, home: { jobTitles, profilePic, introPast, introFuture, portfolioTitle, blogTitle, cv } }) => {
   return (
     <Layout>
         <GradientBanner gradient={'amber-pink-gradient'}>
@@ -29,7 +29,7 @@ const Home: NextPage<Props> = ({ projects, home: { jobTitles, profilePic, introP
             className='text-2xl sm:text-3xl font-semibold tracking-wide capitalize p-3 text-white'>DavidJGrant Portfolio</motion.h1>
           <JobTitles jobTitles={jobTitles} />
           <motion.div variants={fade}
-            className="dark:bg-black bg-gray-50 p-4 rounded-full absolute -bottom-20 left-1/2 transform -translate-x-1/2">
+            className="dark:bg-black bg-gray-50 p-4 rounded-full absolute -bottom-20 left-1/2 transform -translate-x-1/2 max-w-[200px] md:max-w-none">
             <Image
               className='rounded-full'
               loader={imageLoader}
@@ -41,7 +41,7 @@ const Home: NextPage<Props> = ({ projects, home: { jobTitles, profilePic, introP
           </motion.div>
         </GradientBanner>
         <article className='container mx-auto'>
-          <IntroSplit text={{ introPast, introFuture }} />
+          <IntroSplit text={{ introPast, introFuture, cv }} />
           <SectionTitle title={'View Portfolio'} arrow={true} color={'amber-pink-gradient'}>
             { portfolioTitle }
           </SectionTitle>

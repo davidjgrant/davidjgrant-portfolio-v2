@@ -3,7 +3,8 @@ import React, { useState } from "react";
 const ContactForm = () => {
   const [query, setQuery] = useState({
     name: "",
-    email: ""
+    email: "",
+    message: ""
   });
   
   // Update inputs value

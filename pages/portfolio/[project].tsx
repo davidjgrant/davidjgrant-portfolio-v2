@@ -17,7 +17,6 @@ interface Props {
 }
 
 export const ProjectPage: NextPage<Props> = ({ project: {title, author, published, tags, featureImage, bodyRichText}, moreProjects }) => {
-  console.log(moreProjects[0]);
   
   return (
     <Layout>

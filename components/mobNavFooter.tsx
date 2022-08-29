@@ -14,7 +14,7 @@ const MobNavFooter = () => {
           </Link>
         </Button>
         <Button type={'primary'}>
-          <Link href={'https://assets.ctfassets.net/h50elbgx77ux/1ge9w4HqcgAn8HOkcJ8FvO/3e847e02c5e90213c573ab01fcbb569e/CV_Bristol_2022.pdf'}>
+          <Link href={'https://assets.ctfassets.net/h50elbgx77ux/1ge9w4HqcgAn8HOkcJ8FvO/875b05c2efd8e5d6cce51963edde1dce/CV_Bristol_2022.pdf'}>
             <a className='px-8 py-3'>CV</a>
           </Link>
         </Button>

@@ -8,10 +8,7 @@ import ContactForm from "../components/contactForm";
 import FeaturedTextBanner from "../components/featuredTextBanner";
 import Socials from "../components/socials";
 import Layout from "../sections/Layout";
-import imageLoader from "../utils/imageHandler";
 import { getContactPage } from "./api";
-import city from '../assets/bristol.svg'
-
 interface Props {
   contactPage;
 }

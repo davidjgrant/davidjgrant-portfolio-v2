@@ -26,7 +26,7 @@ const Home: NextPage<Props> = ({ projects, home: { jobTitles, profilePic, introP
     <Layout>
         <GradientBanner gradient={'amber-pink-gradient'}>
           <motion.h1 variants={titleAnimation} initial='hidden' whileInView='show' viewport={{ once: true, amount: 0.8 }}
-            className='text-2xl sm:text-3xl font-semibold tracking-wide capitalize p-3 text-white'>DavidJGrant Portfolio</motion.h1>
+            className='my-4 text-3xl sm:text-5xl font-bold capitalize p-3 text-white'>DavidJGrant Portfolio</motion.h1>
           <JobTitles jobTitles={jobTitles} />
           <motion.div variants={fade}
             className="dark:bg-black bg-gray-50 p-4 rounded-full absolute -bottom-20 left-1/2 transform -translate-x-1/2 max-w-[200px] md:max-w-none">

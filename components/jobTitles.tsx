@@ -9,7 +9,7 @@ const JobTitles = ({jobTitles}) => {
         return (
           <motion.li
             variants={fade}
-            className='text-white'
+            className='text-white sm:text-xl font-semibold mb-1'
             key={title}
           >{title}</motion.li>
         )

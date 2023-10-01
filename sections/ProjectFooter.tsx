@@ -23,7 +23,7 @@ const ProjectFooter = ({ moreProjects }) => {
             className="w-full md:w-1/2 mb-1 md:mb-0 transition-opacity ease-in-out hover:opacity-80"
           >
             <Link href={`/portfolio/${slug}`}>
-              <div className="flex cursor-pointer">
+              <div className="flex flex-col sm:flex-row cursor-pointer h-64">
                 <Image
                   className="max-w-[350px] w-auto max-h-80 object-cover"
                   loader={imageLoader}
@@ -33,7 +33,7 @@ const ProjectFooter = ({ moreProjects }) => {
                   width={500}
                   height={320}
                 />
-                <div className="w-2/3 flex flex-col justify-start bg-white dark:bg-zinc-800 p-6">
+                <div className=" md:w-2/3 flex flex-col justify-start bg-white dark:bg-zinc-800 p-6">
                   <h4 className="mb-4 text-xl font-medium">{title}</h4>
                   <p className="mb-4">{shortDescription}</p>
                   <Button type={'tertiary'} classname="px-8 py-3">

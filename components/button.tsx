@@ -1,12 +1,22 @@
 import React from 'react'
 
-const Button = ({type, children}) => {
+type ButtonProps = {
+  type: 'primary' | 'secondary' | 'tertiary';
+  classname?: string;
+  children: React.ReactNode;
+};
+
+const Button = ({type, classname, children}: ButtonProps) => {
   if (type === 'primary') {
-    return (<button className='btn btn-primary'>{children}</button>)
+    return (<button className={`${classname} btn btn-primary`}>{children}</button>)
   } else if (type === 'secondary') {
-    return (<button className='btn btn-secondary'>{children}</button>)
+    return (
+      <button className={`${classname} btn btn-secondary`}>{children}</button>
+    );
   } else if (type === 'tertiary') {
-    return (<button className='btn btn-tertiary'>{children}</button>)
+    return (
+      <button className={`${classname} btn btn-tertiary`}>{children}</button>
+    );
   }
 }
 

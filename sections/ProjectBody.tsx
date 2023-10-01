@@ -3,7 +3,7 @@ import { BLOCKS } from '@contentful/rich-text-types'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import React from 'react'
-import { fade, picAnimation, titleAnimation } from '../styles/Animation'
+import { fade } from '../styles/Animation'
 import imageLoader from '../utils/imageHandler'
 
 const renderOptions = (links) => {
@@ -17,7 +17,7 @@ const renderOptions = (links) => {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const asset = assetMap.get(node.data.target.sys.id);
         return (
-          <motion.div variants={fade} whileInView='show' viewport={{ once: true, amount: 1 }}>
+          <motion.div variants={fade} whileInView='show' viewport={{ amount: 1 }}>
             <Image
               className='object-cover !pb-6'
               loader={imageLoader}
@@ -29,7 +29,9 @@ const renderOptions = (links) => {
           </motion.div>
         );
       },
-      [BLOCKS.PARAGRAPH]: (node, children) => <motion.p variants={fade} initial='hidden' whileInView='show' viewport={{ once: true, amount: 1 }}>{children}</motion.p>
+      [BLOCKS.PARAGRAPH]: (node, children) => <motion.p variants={fade} initial='hidden' whileInView='show' viewport={{ amount: 1 }}>{children}</motion.p>,
+      [BLOCKS.HEADING_2]: (node, children) => <motion.h2 className='mb-2 text-xl' variants={fade} initial='hidden' whileInView='show' viewport={{ amount: 1 }}>{children}</motion.h2>,
+      [BLOCKS.HEADING_3]: (node, children) => <motion.h3 className='mb-2 text-lg' variants={fade} initial='hidden' whileInView='show' viewport={{ amount: 1 }}>{children}</motion.h3>,
     }
   }
 }

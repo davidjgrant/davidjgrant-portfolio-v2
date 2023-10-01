@@ -4,7 +4,7 @@ import imageLoader from '../utils/imageHandler'
 import { motion } from 'framer-motion'
 // Sections
 import GradientBanner from '../sections/GradientBanner'
-import Layout from '../sections/Layout'
+import Layout from './layout'
 import SkillsList from '../sections/SkillsList'
 import AboutContent from '../sections/AboutContent'
 // Components

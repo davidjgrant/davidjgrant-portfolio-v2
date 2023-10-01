@@ -4,7 +4,6 @@ import { MenuItem } from "./menuItem";
 import { stagger } from '../styles/Animation'
 import { ProjectItem } from "./projectItem";
 
-
 export const Menu = ({toggle}) => {
   const itemIds = [0, 1, 2, 3];
   return (
@@ -13,15 +12,14 @@ export const Menu = ({toggle}) => {
         variants={stagger}>
         <MenuItem i={itemIds[0]} link={'/about'}>About</MenuItem>
         <MenuItem i={itemIds[1]} link={'/contact'}>Contact</MenuItem>
-        {/* <MenuItem i={itemIds[2]} link={'/blog'}>Blog</MenuItem> */}
-        <MenuItem i={itemIds[3]} link={'/portfolio/focus-os'}>Portfolio</MenuItem>
+        <MenuItem i={itemIds[3]} link={'/portfolio'}>Portfolio</MenuItem>
       </motion.ul>
       <motion.ul className="pt-2"
         variants={stagger}>
-        <ProjectItem toggle={toggle} link={'/focus-os'}>Focus OS</ProjectItem>
-        <ProjectItem toggle={toggle} link={'/rankr'}>Rankr</ProjectItem>
-        <ProjectItem toggle={toggle} link={'/notedrop'}>NoteDrop</ProjectItem>
-        <ProjectItem toggle={toggle} link={'/hot-pot'}>HotPot</ProjectItem>
+        <ProjectItem toggle={toggle} link={'/aya-abbes-portfolio'}>PSE Archery</ProjectItem>
+        <ProjectItem toggle={toggle} link={'/bijoux-de-mimi'}>Bijoux De Mimi</ProjectItem>
+        <ProjectItem toggle={toggle} link={'/pse-archery'}>PSE Archery</ProjectItem>
+        <ProjectItem toggle={toggle} link={'/legends-speak'}>Legends Speak</ProjectItem>
       </motion.ul>
     </div>
   )

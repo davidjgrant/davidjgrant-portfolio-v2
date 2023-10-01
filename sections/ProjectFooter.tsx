@@ -10,7 +10,7 @@ const ProjectFooter = ({ moreProjects }) => {
   return (
     <motion.section
       variants={fade}
-      initial="hidden"
+      initial={false}
       whileInView="show"
       viewport={{ amount: 0.6 }}
       className="mb-32"

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React, { useState } from 'react'
+import React from 'react'
 import ProjectCard from '../components/projectCard'
 import { fade, picAnimation } from '../styles/Animation';
 
@@ -9,14 +9,12 @@ export interface IPortfolioGrid {
 
 const PortfolioGrid = ({projects}) => {
 
-  const [gradient, setGradient ] = useState('purple-purple-gradient')
-
   return (
     <motion.section
       variants={fade}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.6 }}
+      viewport={{ once: true }}
       className="relative flex justify-center items-end h-[140rem] sm:h-[40rem] mb-48"
     >
       <motion.ul
@@ -34,7 +32,7 @@ const PortfolioGrid = ({projects}) => {
         ))}
       </motion.ul>
       <div
-        className={`absolute -bottom-24 h-[84rem] sm:h-[40rem] w-full z-0 ${gradient}`}
+        className={`absolute -bottom-24 h-[84rem] sm:h-[40rem] w-full z-0`}
       ></div>
     </motion.section>
   );

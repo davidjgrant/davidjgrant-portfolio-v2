@@ -7,7 +7,7 @@ import JobTitles from '../components/jobTitles';
 import imageLoader from '../utils/imageHandler';
 import SectionTitle from '../components/sectionTitle';
 // Sections
-import Layout from '../sections/Layout'
+import Layout from './layout'
 import GradientBanner from '../sections/GradientBanner';
 import IntroSplit from '../sections/IntroSplit';
 import PortfolioGrid from '../sections/PortfolioGrid';

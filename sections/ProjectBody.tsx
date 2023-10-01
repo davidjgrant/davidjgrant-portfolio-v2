@@ -17,9 +17,13 @@ const renderOptions = (links) => {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const asset = assetMap.get(node.data.target.sys.id);
         return (
-          <motion.div variants={fade} whileInView='show' viewport={{ amount: 1 }}>
+          <motion.div
+            variants={fade}
+            whileInView="show"
+            viewport={{ amount: 1 }}
+          >
             <Image
-              className='object-cover !pb-6'
+              className="object-cover !pb-6"
               loader={imageLoader}
               src={asset.url}
               alt="Author Pic"
@@ -29,11 +33,40 @@ const renderOptions = (links) => {
           </motion.div>
         );
       },
-      [BLOCKS.PARAGRAPH]: (node, children) => <motion.p variants={fade} initial='hidden' whileInView='show' viewport={{ amount: 1 }}>{children}</motion.p>,
-      [BLOCKS.HEADING_2]: (node, children) => <motion.h2 className='mb-2 text-xl' variants={fade} initial='hidden' whileInView='show' viewport={{ amount: 1 }}>{children}</motion.h2>,
-      [BLOCKS.HEADING_3]: (node, children) => <motion.h3 className='mb-2 text-lg' variants={fade} initial='hidden' whileInView='show' viewport={{ amount: 1 }}>{children}</motion.h3>,
-    }
-  }
+      [BLOCKS.PARAGRAPH]: (node, children) => (
+        <motion.p
+          variants={fade}
+          initial={false}
+          whileInView="show"
+          viewport={{ amount: 1 }}
+        >
+          {children}
+        </motion.p>
+      ),
+      [BLOCKS.HEADING_2]: (node, children) => (
+        <motion.h2
+          className="mb-2 text-xl"
+          variants={fade}
+          initial={false}
+          whileInView="show"
+          viewport={{ amount: 1 }}
+        >
+          {children}
+        </motion.h2>
+      ),
+      [BLOCKS.HEADING_3]: (node, children) => (
+        <motion.h3
+          className="mb-2 text-lg"
+          variants={fade}
+          initial={false}
+          whileInView="show"
+          viewport={{ amount: 1 }}
+        >
+          {children}
+        </motion.h3>
+      ),
+    },
+  };
 }
 
 

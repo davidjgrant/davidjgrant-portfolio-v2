@@ -1,7 +1,7 @@
 import { GetStaticProps, GetStaticPaths, NextPage } from "next"
 import { getAllProjectsWithSlug, getProjectAndMore } from "../api"
 import { IProjectFields } from "../../types";
-import Layout from "../../sections/Layout";
+import Layout from "../layout";
 import ProjectHead from "../../sections/ProjectHead";
 import Author from "../../components/author";
 import Roles from "../../components/roles";

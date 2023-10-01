@@ -1,6 +1,6 @@
-import Header from "./Header";
+import Header from "../sections/Header";
 import Head from "next/head";
-import Footer from "./Footer";
+import Footer from "../sections/Footer";
 import { motion } from "framer-motion";
 import { pageAnimation } from "../styles/Animation";
 
@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
 
       <div className="min-h-screen flex flex-col">
         <Header />
-        <motion.main layout variants={pageAnimation} initial='hidden' animate='show' exit='exit'>
+        <motion.main layout variants={pageAnimation} initial='hidden' animate='show' exit={{ opacity: 0 }}>
           {children}
         </motion.main>
         <Footer />

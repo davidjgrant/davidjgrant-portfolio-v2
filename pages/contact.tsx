@@ -7,7 +7,7 @@ import { GetStaticProps, NextPage } from "next";
 import ContactForm from "../components/contactForm";
 import FeaturedTextBanner from "../components/featuredTextBanner";
 import Socials from "../components/socials";
-import Layout from "../sections/Layout";
+import Layout from "./layout";
 import { getContactPage } from "./api";
 interface Props {
   contactPage;

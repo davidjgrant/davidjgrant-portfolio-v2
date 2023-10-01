@@ -51,7 +51,7 @@ const ProjectCard = ({ title, description, image, slug }) => {
       }}
       className='max-w-[640px] !hover:rotate-0'>
         <Link href={`/portfolio/${slug}`}>
-          <a className='flex shadow-md shadow-zinc-900'>
+          <a className='flex flex-col sm:flex-row shadow-md shadow-zinc-900'>
             <Image
                 className='max-h-80 w-80 object-cover'
                 loader={imageLoader}
